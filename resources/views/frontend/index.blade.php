@@ -746,47 +746,57 @@
         <div class="container">
             <div class="row">
                 <div class="widget_area">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="widget_item widget_about">
                             <h5 class="text-white">About Us</h5>
-                            <p class="m-top-20">Menjual ikan yang tetap SEGAR hingga tangan konsumen </p>
+                            <p class="m-top-20">Menjual ikan yang tetap SEGAR hingga tangan konsumen.  </p>
                             <div class="widget_ab_item m-top-30">
                                 <div class="item_icon"><i class="fa fa-location-arrow"></i></div>
                                 <div class="widget_ab_item_text">
                                     <h6 class="text-white">Location</h6>
                                     <p>
-                                        D4 Teknik Informatika 2015
-                                        Politeknik Elektronika
-                                        Negeri Surabaya,
-                                        Surabaya</p>
+                                        Lokasi JL. Raya Pasir Putih Tromol Pos I, Mlandingan Kec. Bungatan Kab.Situbondo 683523</p>
                                 </div>
                             </div>
                             <div class="widget_ab_item m-top-30">
                                 <div class="item_icon"><i class="fa fa-phone"></i></div>
                                 <div class="widget_ab_item_text">
                                     <h6 class="text-white">Phone :</h6>
-                                    <p>+62 12345678910</p>
+                                    <p> ( 0338) 390093</p>
+                                </div>
+                            </div>
+                            <div class="widget_ab_item m-top-30">
+                                <div class="item_icon"><i class="fa fa-fax"></i></div>
+                                <div class="widget_ab_item_text">
+                                    <h6 class="text-white">Fax :</h6>
+                                    <p>  (0338) 390280</p>
                                 </div>
                             </div>
                             <div class="widget_ab_item m-top-30">
                                 <div class="item_icon"><i class="fa fa-envelope-o"></i></div>
                                 <div class="widget_ab_item_text">
                                     <h6 class="text-white">Email Address :</h6>
-                                    <p>eefishteam@mail.com</p>
+                                    <p>upbl.situbondo@yahoo.co.id</p>
                                 </div>
                             </div>
                         </div><!-- End off widget item -->
                     </div><!-- End off col-md-3 -->
 
-                    <div class="col-md-3">
-
+                    <div class="col-md-4">
+                        <div class="widget_item widget_service sm-m-top-50">
+                            <h5 class="text-white">Eefish</h5>
+                            <ul>
+                                <li><a href="">Tentang EEFISH</a></li>
+                                <li><a href="{{url('services')}}">Jenis Pelayanan</a></li>
+                                <li><a href="{{url('seed-comodity')}}">Harga Benih & Komoditi</a></li>
+                                <li><a href="{{url('aula')}}">Ruang Pertemuan</a></li>
+                                <li><a href="{{url('training')}}">Pelatihan</a></li>
+                            </ul>
+                        </div>
                     </div><!-- End off col-md-3 -->
 
-                    <div class="col-md-3">
 
-                    </div><!-- End off col-md-3 -->
-
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="widget_item widget_newsletter sm-m-top-50">
                             <h5 class="text-white">Newsletter</h5>
                             <form class="form-inline m-top-30">

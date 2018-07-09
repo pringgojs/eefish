@@ -17,6 +17,8 @@ Route::get('/login', 'LoginController@index');
 Route::post('/login/validate', 'LoginController@validateLogin');
 Route::get('/logout', 'LoginController@logout');
 
+Route::get('/services', 'FrontendController@services');
+Route::get('/prices', 'FrontendController@prices');
 
 Route::group(['prefix' => 'master', 'namespace' => 'Master'], function () {
     Route::group(['prefix' => 'pengguna', 'middleware' => 'login-verification'], function () {
