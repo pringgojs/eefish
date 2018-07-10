@@ -22,6 +22,14 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="name" class="col-sm-3 col-xs-12 control-label">Gambar ikan</label>
+                <div class="col-sm-8 col-xs-12">
+                    <input type="file" name="fish_photo" class="form-control">
+                    <br>
+                </div>
+            </div>
+
             <input type="hidden" name="id" value="{{$data->id}}">
 
             <div class="form-group">

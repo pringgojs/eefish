@@ -54,6 +54,13 @@ class IkanController extends Controller
 
         $data->fish_name = $request->input('fish_name');
         $data->fish_fish_categories_id = $request->input('fish_fish_categories_id');
+        $picture = $request->file('fish_photo');
+        if (isset($picture)) {
+            $filename = date("YmdHis"). '-' . $picture->getClientOriginalName();
+            if ($picture->move("public/uploads/ikan", $filename)) {
+                $data->photo = $filename;
+            }
+        }
         try{
             $data->save();
             return "
