@@ -20,6 +20,24 @@ Route::get('/logout', 'LoginController@logout');
 Route::get('/services', 'FrontendController@services');
 Route::get('/prices', 'FrontendController@prices');
 
+Route::group(['prefix' => 'content', 'namespace' => 'Content', 'middleware' => 'login-verification'], function () {
+    Route::group(['prefix' => 'page'], function () {
+        Route::get('/', 'PageController@index');
+        Route::post('/add', 'PageController@add');
+        Route::post('/save', 'PageController@save');
+        Route::post('/delete', 'PageController@delete');
+        Route::get('/{id}/detail', 'PageController@detail');
+    });
+
+    Route::group(['prefix' => 'link'], function () {
+        Route::get('/', 'LinkController@index');
+        Route::post('/add', 'LinkController@add');
+        Route::post('/save', 'LinkController@save');
+        Route::post('/delete', 'LinkController@delete');
+        Route::get('/{id}/detail', 'LinkController@detail');
+    });
+});
+
 Route::group(['prefix' => 'master', 'namespace' => 'Master'], function () {
     Route::group(['prefix' => 'pengguna', 'middleware' => 'login-verification'], function () {
         Route::get('/', 'PenggunaController@index');

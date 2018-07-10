@@ -7,6 +7,25 @@
     </li>
     <li class="treeview">
         <a href="#">
+            <i class="fa fa-file"></i>
+            <span>Manajemen Konten</span>
+            <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li>
+                <a href="{{url('content/page')}}">
+                    <i class="fa fa-circle-o"></i> Manajemen Halaman
+                </a>
+            </li>
+            <li>
+                <a href="{{url('content/link')}}">
+                    <i class="fa fa-circle-o"></i> Manajemen Link Luar
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="treeview">
+        <a href="#">
             <i class="fa fa-institution"></i>
             <span>Data Master</span>
             <i class="fa fa-angle-left pull-right"></i>
@@ -46,7 +65,7 @@
     <li class="treeview">
         <a>
             <i class="fa fa-balance-scale"></i>
-            <span>Managemen Transaksi</span>
+            <span>Manajemen Transaksi</span>
             <i class="fa fa-angle-left pull-right"></i>
         </a>
 
@@ -71,7 +90,7 @@
     <li class="treeview">
         <a>
             <i class="fa fa-feed"></i>
-            <span>Managemen Feedback</span>
+            <span>Manajemen Feedback</span>
             <i class="fa fa-angle-left pull-right"></i>
         </a>
 

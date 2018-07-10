@@ -34,7 +34,6 @@
     <link rel="stylesheet" href="{{asset('public/frontend/eefish/assets/css/responsive.css')}}" />
 
     <script src="{{asset('public/frontend/eefish/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
-
     <style>
     .br-left {
         border-left: 1px solid #eee 

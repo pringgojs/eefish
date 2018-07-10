@@ -44,6 +44,7 @@
     <script src="{{asset('public/plugin/gauge/highcharts.js')}}"></script>
     <script src="{{asset('public/plugin/gauge/highcharts-more.js')}}"></script>
     <script src="{{asset('public/plugin/gauge/solid-gauge.js')}}"></script>
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -56,6 +57,7 @@
         $.widget.bridge('uibutton', $.ui.button);
     </script>
 
+    
 </head>
 <body class="skin-blue fixed sidebar-mini">
 <div class="wrapper">
