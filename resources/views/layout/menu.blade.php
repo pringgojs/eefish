@@ -19,7 +19,7 @@
             </li>
             <li>
                 <a href="{{url('content/link')}}">
-                    <i class="fa fa-circle-o"></i> Manajemen Link Luar
+                    <i class="fa fa-circle-o"></i> Manajemen Link
                 </a>
             </li>
         </ul>

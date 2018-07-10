@@ -20,6 +20,7 @@
                             <th>Posisi</th>
                             <th>Jenis</th>
                             <th>Sublink</th>
+                            <th>Aksi</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -30,9 +31,9 @@
                                 <td>{{$link->link_url}}</td>
                                 <td>{{$link->link_position}}</td>
                                 <td>{{$link->link_is_parent ? 'Parent Link' : 'Child Link'}}</td>
-                                <td>{{$link->link_parent_id ? }}</td>
+                                <td>{{$link->link_parent_id ? $link->getParent() : '-'}}</td>
                                 <td>
-                                    <a onclick="loadModal(this)" target="periode/add" data="id={{$link->id}}"
+                                    <a onclick="loadModal(this)" target="link/add" data="id={{$link->id}}"
                                        class="btn btn-primary btn-xs glyphicon glyphicon-pencil" title="Ubah Data"></a>
                                     <a onclick="deleteData({{$link->id}})" class="btn btn-danger btn-xs glyphicon glyphicon-trash"
                                        title="Hapus Data"></a>
@@ -67,7 +68,7 @@
             var data = new FormData();
             data.append('id', id);
             modalConfirm('Konfirmasi', 'Apakah anda yakin akan menghapus data?', function () {
-                ajaxTransfer('page/delete', data, '#modal-output');
+                ajaxTransfer('link/delete', data, '#modal-output');
             });
         }
     </script>
