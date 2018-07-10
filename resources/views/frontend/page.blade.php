@@ -99,6 +99,9 @@
         overflow-x: auto;
         border: 1px solid #ddd;
     }
+    .contain table td {
+        padding: 10px
+    }
     </style>
 </head>
 
