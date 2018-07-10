@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('Title', 'Halaman')
+@section('Title', 'Manajemen Link')
 @section('content')
 
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="dashboard_graph">
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <a onclick="loadModal(this)" target="page/add" title="Tambah Data" class="btn btn-primary">
+                    <a onclick="loadModal(this)" target="link/add" title="Tambah Data" class="btn btn-primary">
                         <span class="glyphicon glyphicon-plus"></span> Tambah Data
                     </a>
 
@@ -15,21 +15,26 @@
                         <thead>
                         <tr>
                             <th width="3%">No</th>
-                            <th>Judul Halaman</th>
-                            <th>Konten</th>
-                            <th>Aksi</th>
+                            <th>Nama</th>
+                            <th>Url</th>
+                            <th>Posisi</th>
+                            <th>Jenis</th>
+                            <th>Sublink</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($pages as $num => $page)
+                        @foreach($links as $num => $link)
                             <tr>
                                 <td>{{$num+1}}</td>
-                                <td>{{$page->title}}</td>
-                                <td>{!! substr($page->content, 200) !!}</td>
+                                <td>{{$link->link_name}}</td>
+                                <td>{{$link->link_url}}</td>
+                                <td>{{$link->link_position}}</td>
+                                <td>{{$link->link_is_parent ? 'Parent Link' : 'Child Link'}}</td>
+                                <td>{{$link->link_parent_id ? }}</td>
                                 <td>
-                                    <a onclick="loadModal(this)" target="periode/add" data="id={{$page->id}}"
+                                    <a onclick="loadModal(this)" target="periode/add" data="id={{$link->id}}"
                                        class="btn btn-primary btn-xs glyphicon glyphicon-pencil" title="Ubah Data"></a>
-                                    <a onclick="deleteData({{$page->id}})" class="btn btn-danger btn-xs glyphicon glyphicon-trash"
+                                    <a onclick="deleteData({{$link->id}})" class="btn btn-danger btn-xs glyphicon glyphicon-trash"
                                        title="Hapus Data"></a>
                                 </td>
                             </tr>

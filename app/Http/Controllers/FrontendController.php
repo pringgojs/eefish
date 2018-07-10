@@ -6,6 +6,7 @@
  * Time: 9:31 AM
  */
 namespace App\Http\Controllers;
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -15,13 +16,15 @@ class FrontendController extends Controller
         return view('frontend.index');
     }
 
-    public function services()
+    public function page($link_page)
     {
-        return view('frontend.services');
+        $view = view('frontend.services');
+        $view->page = Page::where('link', $link_page)->first();
+        if (!$view->page) {
+            return redirect(url('/'));
+        }
+
+        return $view;
     }
 
-    public function prices()
-    {
-        return view('frontend.prices');
-    }
 }

@@ -90,6 +90,15 @@
         font-weight: 600;
         margin-top: 30px
     }
+    /* table */
+    .contain table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        min-height: .01%;
+        overflow-x: auto;
+        border: 1px solid #ddd;
+    }
     </style>
 </head>
 

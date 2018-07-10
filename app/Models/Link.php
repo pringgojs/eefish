@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LinkOther extends Model
+class Link extends Model
 {
-    protected $table = 'link_others';
+    protected $table = 'links';
     protected $primaryKey = 'id';
     public $timestamps = false;
 }
