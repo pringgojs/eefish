@@ -75,7 +75,10 @@ class IkanController extends Controller
     {
         $id = $request->input('id');
         $data = Fish::find($id);
-
+        $path = public_path('uploads/ikan/'.$data->photo);
+        if (file_exists($path)) {
+            \File::delete($path);
+        }
         try{
             $data->delete();
             return "
