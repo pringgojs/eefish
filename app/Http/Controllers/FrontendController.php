@@ -6,8 +6,10 @@
  * Time: 9:31 AM
  */
 namespace App\Http\Controllers;
+use App\Models\Fish;
 use App\Models\Link;
 use App\Models\Page;
+use App\Models\FishCategory;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -24,6 +26,7 @@ class FrontendController extends Controller
     {
         $view = view('frontend.page');
         $view->page = Page::where('link', $link_page)->first();
+        $view->title = $view->page->name;
         $view->link_sidebar = Link::where('link_position', 'sidebar')->where('link_is_parent', 1)->get();
         $view->link_footer = Link::where('link_position', 'footer')->get();
         $view->link_header = Link::where('link_position', 'header')->get();
@@ -34,13 +37,15 @@ class FrontendController extends Controller
         return $view;
     }
 
-    public function catalog()
+    public function catalog($category_id = "")
     {
         $view = view('frontend.catalog');
-        $view->page = Page::where('link', $link_page)->first();
-        $view->link_sidebar = Link::where('link_position', 'sidebar')->where('link_is_parent', 1)->get();
         $view->link_footer = Link::where('link_position', 'footer')->get();
         $view->link_header = Link::where('link_position', 'header')->get();
+        $view->categories = FishCategory::all();
+        $view->category = $category_id ? FishCategory::find($category_id) : '';
+        $view->fishes = $category_id ? Fish::where('fish_fish_categories_id', $category_id)->paginate(12) : Fish::paginate(12);
+        $view->title = 'Catalog';
         return $view;
     }
 
