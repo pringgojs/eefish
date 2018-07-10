@@ -17,6 +17,7 @@
                             <th width="3%">No</th>
                             <th>Nama Ikan</th>
                             <th>Kategori Ikan</th>
+                            <th>Foto</th>
                             <th>Aksi</th>
                         </tr>
                         </thead>
@@ -26,6 +27,7 @@
                                 <td>{{$num+1}}</td>
                                 <td>{{$item->fish_name}}</td>
                                 <td>{{$item->getCategory->fish_category_name}}</td>
+                                <td>{!! $item->photo ? '<img src="'.asset('public/uploads/ikan/'.$item->photo).'" style="height: 50px; width: auto">' : '-'!!}</td>
                                 <td>
                                     <a onclick="loadModal(this)" target="ikan/add" data="id={{$item->id}}"
                                        class="btn btn-primary btn-xs glyphicon glyphicon-pencil" title="Ubah Data"></a>

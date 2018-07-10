@@ -13,6 +13,7 @@
                 <label for="name" class="col-sm-3 col-xs-12 control-label">Posisi</label>
                 <div class="col-sm-8 col-xs-12">
                     <select name="link_position" class="form-control">
+                        <option value="header" @if($data->link_position == 'header') selected @endif>Header</option>
                         <option value="footer" @if($data->link_position == 'footer') selected @endif>Footer</option>
                         <option value="sidebar" @if($data->link_position == 'sidebar') selected @endif>Sidebar</option>
                     </select>

@@ -15,6 +15,7 @@ class FrontendController extends Controller
     public function index()
     {
         $view = view('frontend.index');
+        $view->link_header = Link::where('link_position', 'header')->get();
         $view->link_footer = Link::where('link_position', 'footer')->get();
         return $view;
     }
@@ -25,10 +26,21 @@ class FrontendController extends Controller
         $view->page = Page::where('link', $link_page)->first();
         $view->link_sidebar = Link::where('link_position', 'sidebar')->where('link_is_parent', 1)->get();
         $view->link_footer = Link::where('link_position', 'footer')->get();
+        $view->link_header = Link::where('link_position', 'header')->get();
         if (!$view->page) {
             return redirect(url('/'));
         }
 
+        return $view;
+    }
+
+    public function catalog()
+    {
+        $view = view('frontend.catalog');
+        $view->page = Page::where('link', $link_page)->first();
+        $view->link_sidebar = Link::where('link_position', 'sidebar')->where('link_is_parent', 1)->get();
+        $view->link_footer = Link::where('link_position', 'footer')->get();
+        $view->link_header = Link::where('link_position', 'header')->get();
         return $view;
     }
 
