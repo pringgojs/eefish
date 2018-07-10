@@ -2,7 +2,7 @@
 
 @section('content')
     {!!$page->content!!}
-    {{-- <h3>Tentang EEFISH</h3>
+    <h3>Tentang EEFISH</h3>
     <p>Penetapan pelayanan UPT PBL Situbondo berdasarkan UU No 25 tahun 2009 tercakap komponen proses layanan dan pengelolaan</p>
     <h5>Prinsip</h5>
     <p>Didalam mengembangkan usahanya, UPT Pengembangan Budidaya Laut mempunyai prinsip:
@@ -54,5 +54,5 @@
             <li>Uji kualitas air : DO,PH, Suhu , Salinitas, nitrat, nitrit, amoniak, sulfit</li>
             <li>Penghitungan Plankton ( Chlorella,rotifer,sketonema </li>
         </ul>
-    </p> --}}
+    </p>
 @stop

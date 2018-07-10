@@ -5,7 +5,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
-    <title>EEFISH Market</title>
+    <title>{{$page->title}} | EEFISH</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="{{asset('public/frontend/eefish/favicon.ico')}}">
@@ -178,37 +178,22 @@
 
                     <div class="col-md-3">
                         <ul class="list-ul">
+                            @foreach($link_sidebar as $link)
                             <li class="list-li"  style="border-bottom:1px solid #eee">
-                                <a href="{{url('services')}}" class="list-link @if(Request::segment(1)=='services') active @endif">Tetang Eefish</a>
+                                <a href="{{$link->link_url}}" class="list-link @if(Request::fullUrl()==$link->link_url) active @endif">{{$link->link_name}}</a>
+                                @if($link->child)
                                 <ul class="list-ul">
-                                    <li class="list-li"><a href="" class="list-link-1 list-link-pad-left--5">Pelayanan</a></li>
-                                    <li class="list-li"><a href="" class="list-link-1 list-link-pad-left--5">Prinsip</a></li>
-                                    <li class="list-li"><a href="" class="list-link-1 list-link-pad-left--5">Jenis Layanan</a></li>
-                                    <li class="list-li"><a href="" class="list-link-1 list-link-pad-left--5">Jenis Benih Ikan</a></li>
-                                    <li class="list-li"><a href="" class="list-link-1 list-link-pad-left--5">Laboratorium</a></li>
+                                    @foreach($link->child as $child)
+                                    <li class="list-li"><a href="{{$child->link_url}}" class="list-link-1 list-link-pad-left--5 @if(Request::fullUrl()==$child->link_url) active @endif">{{$child->link_name}}</a></li>
+                                    @endforeach
                                 </ul>
+                                @endif
                             </li>
-                            <li class="list-li"  style="border-bottom:1px solid #eee">
-                                <a href="{{url('prices')}}" class="list-link @if(Request::segment(1)=='prices') active @endif">Harga Sewa Layanan</a>
-                                <ul class="list-ul">
-                                    <li class="list-li"><a href="" class="list-link-1 list-link-pad-left--5">Harga Benih Ikan</a></li>
-                                    <li class="list-li"><a href="" class="list-link-1 list-link-pad-left--5">Penyewaan Aula</a></li>
-                                    <li class="list-li"><a href="" class="list-link-1 list-link-pad-left--5">Perpustakaan</a></li>
-                                    <li class="list-li"><a href="" class="list-link-1 list-link-pad-left--5">Penyewaan Laboratorium</a></li>
-                                </ul>
-                            </li>
-                            <li class="list-li">
-                                <a href="" class="list-link">Pelatihan</a>
-                                <ul class="list-ul">
-                                    <li class="list-li"><a href="" class="list-link-1 list-link-pad-left--5">Tujuan</a></li>
-                                    <li class="list-li"><a href="" class="list-link-1 list-link-pad-left--5">Sasaran</a></li>
-                                    <li class="list-li"><a href="" class="list-link-1 list-link-pad-left--5">Substansi</a></li>
-                                </ul>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="col-md-9 contain br-left">
-                        @yield('content')
+                        {!!$page->content!!}
                     </div>
 
                 </div>
@@ -261,11 +246,9 @@
                         <div class="widget_item widget_service sm-m-top-50">
                             <h5 class="text-white">Eefish</h5>
                             <ul>
-                                <li><a href="">Tentang EEFISH</a></li>
-                                <li><a href="">Jenis Pelayanan</a></li>
-                                <li><a href="">Harga Benih & Komoditi</a></li>
-                                <li><a href="">Ruang Pertemuan</a></li>
-                                <li><a href="">Pelatihan</a></li>
+                                @foreach($link_footer as $link)
+                                <li><a href="{{$link->link_url}}">{{$link->link_name}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div><!-- End off col-md-3 -->

@@ -786,11 +786,9 @@
                         <div class="widget_item widget_service sm-m-top-50">
                             <h5 class="text-white">Eefish</h5>
                             <ul>
-                                <li><a href="">Tentang EEFISH</a></li>
-                                <li><a href="{{url('services')}}">Jenis Pelayanan</a></li>
-                                <li><a href="{{url('seed-comodity')}}">Harga Benih & Komoditi</a></li>
-                                <li><a href="{{url('aula')}}">Ruang Pertemuan</a></li>
-                                <li><a href="{{url('training')}}">Pelatihan</a></li>
+                                @foreach($link_footer as $link)
+                                <li><a href="{{$link->link_url}}">{{$link->link_name}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div><!-- End off col-md-3 -->

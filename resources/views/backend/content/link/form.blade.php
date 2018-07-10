@@ -54,7 +54,7 @@
             <div class="form-group">
                 <label for="link_is_parent" class="col-sm-3 col-xs-12 control-label">Kategori</label>
                 <div class="col-sm-8 col-xs-12">
-                    <input type="checkbox" id="is-sublink"  name="is_sublink" @if($data->link_parent_id > 0 ) checked @endif onchange="isSublink()"> Sebagai sub link
+                    <input type="checkbox" id="is-sublink"  name="is_sublink" @if($data->link_parent_id > 0 ) checked @endif onchange="isSublink()"> Sebagai submenu
                     <br>
                     <select name="link_parent_id" id="link-parent-id" class="form-control" style="display:{{$data->link_parent_id > 0 ? 'block' : 'none'}}">
                         <option value="">Pilih link parent</option>

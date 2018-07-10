@@ -37,7 +37,6 @@ class LinkController extends Controller
         $data->link_name = $request->input('link_name');
         $data->link_url = $request->input('link_url') != null ? $request->input('link_url') : '#';
         $data->save();
-        \Log::info($data);
         try{
             $data->save();
             return "
