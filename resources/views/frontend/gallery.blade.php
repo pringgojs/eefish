@@ -11,13 +11,12 @@
                         @foreach($galleries as $gallery)
                         <div class="col-md-4 col-xs-6">
                             <div class="thumbnail">
-                                <img src="{{ asset('public/uploads/gallery/'.$gallery->gallery_photo)}}" alt="Lights" style="width:100%">
+                                <img src="{{ asset('public/uploads/gallery/'.$gallery->gallery_photo)}}" alt="Lights" style="width:100%; height:230px">
                                 <div class="caption">
                                     <p><b>{{$gallery->gallery_name}}</b></p>
                                 </div>
                             </div>
                         </div>
-                        {{-- <img src="{{ asset('public/uploads/ikan/'.$photo)}}" width="200px" height="200px" class="img-thumbnail" alt="Cinque Terre"> --}}
                         @endforeach
                         {{ $galleries->links( "pagination::bootstrap-4") }}
                     </div>
