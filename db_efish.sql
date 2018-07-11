@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 10 Jul 2018 pada 13.49
+-- Generation Time: 11 Jul 2018 pada 13.38
 -- Versi Server: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -111,16 +111,104 @@ CREATE TABLE `courier_assignments` (
 CREATE TABLE `fishes` (
   `id` int(11) NOT NULL,
   `fish_name` varchar(255) DEFAULT NULL,
-  `fish_fish_categories_id` int(11) NOT NULL
+  `fish_fish_categories_id` int(11) NOT NULL,
+  `photo` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data untuk tabel `fishes`
 --
 
-INSERT INTO `fishes` (`id`, `fish_name`, `fish_fish_categories_id`) VALUES
-(1, 'Ikan Lele', 3),
-(3, 'Ikan Bandeng', 3);
+INSERT INTO `fishes` (`id`, `fish_name`, `fish_fish_categories_id`, `photo`) VALUES
+(1, 'Ikan Lele', 3, NULL),
+(3, 'Ikan Bandeng', 3, NULL),
+(91, 'Kakap putih', 1, NULL),
+(92, 'Kerapu tikus ', 1, NULL),
+(93, 'Kerapu Lumpur', 1, NULL),
+(94, 'Kerapu cantang', 1, NULL),
+(95, 'Bandeng', 1, NULL),
+(96, 'Kerapu macan', 1, NULL),
+(97, 'Kerapu sunu', 1, NULL),
+(98, 'Kerapu batik', 1, NULL),
+(99, 'Baronang', 1, NULL),
+(100, 'Kakap merah', 1, NULL),
+(101, 'Kerapu macan', 2, NULL),
+(102, 'Bandeng ', 2, NULL),
+(103, 'Kerapu Lumpur', 2, NULL),
+(104, 'Kerapu cantang', 2, NULL),
+(105, 'Kerapu tikus', 2, NULL),
+(106, 'Belanak', 2, NULL),
+(107, 'Kepiting', 2, NULL),
+(108, 'Kakap putih', 2, NULL),
+(109, 'Nila', 2, NULL),
+(110, 'Mujair', 2, NULL),
+(111, 'Arwana', 3, '20180710144230-nemo.jpeg'),
+(112, 'Arengan ', 3, NULL),
+(113, 'Baung putih', 3, NULL),
+(114, 'Belut', 3, NULL),
+(115, 'Boja', 3, NULL),
+(116, 'Barbus', 3, NULL),
+(117, 'Bilis tembaga', 3, NULL),
+(118, 'Cupang', 3, NULL),
+(119, 'Cerutu strip putih', 3, NULL),
+(120, 'Ciling ciling', 3, NULL),
+(121, 'Cupi', 3, NULL),
+(122, 'Gurami', 3, NULL),
+(123, 'Hampala, barau', 3, NULL),
+(124, 'Lele dumbo', 3, NULL),
+(125, 'Lele putih/ biasa', 3, NULL),
+(126, 'Lais timah', 3, NULL),
+(127, 'Lais junggang', 3, NULL),
+(128, 'Labiusa', 3, NULL),
+(129, 'Langli', 3, NULL),
+(130, 'Mola', 3, NULL),
+(131, 'Mas', 3, NULL),
+(132, 'Cabus', 3, NULL),
+(133, 'Mas koki cina', 3, NULL),
+(134, 'Nilem/paweh', 3, NULL),
+(135, 'Patin', 3, NULL),
+(136, 'Niasa', 3, NULL),
+(137, 'Neon tetra', 3, NULL),
+(138, 'Oscar', 3, NULL),
+(139, 'Big head carp', 8, NULL),
+(140, 'Grass carp/ikan koan ', 8, NULL),
+(141, 'Javanese ca', 8, NULL),
+(142, 'Silver carp', 8, NULL),
+(143, 'Gurami', 8, NULL),
+(144, 'Bandeng', 8, NULL),
+(145, 'Perch', 8, NULL),
+(146, 'Rabbit fish/beronang', 8, NULL),
+(147, 'Tilapia', 8, NULL),
+(148, 'Siamemese gurami', 8, NULL),
+(149, 'Black carp', 9, NULL),
+(150, 'Catfish/ikan lele', 9, NULL),
+(151, 'Grouper/ikan kerapu', 9, NULL),
+(152, 'Atlantic salmon', 9, NULL),
+(153, 'Pacific salmon', 9, NULL),
+(154, 'Seabass/ikan kakap', 9, NULL),
+(155, 'Brown trout', 9, NULL),
+(156, 'Rainbow trout', 9, NULL),
+(157, 'Ikan belut', 9, NULL),
+(158, 'Ikan kakap', 9, NULL),
+(159, 'Channel catfish/lele amerika', 10, NULL),
+(160, 'Common carp/ikan mas', 10, NULL),
+(161, 'Grey mullet/ikan belanak', 10, NULL),
+(162, 'Ikan mujair ', 10, NULL),
+(163, 'ikan mas', 10, NULL),
+(164, 'Ikan nila', 10, NULL),
+(165, 'Ikan oskar', 10, NULL),
+(166, 'Lele dumbo', 10, NULL),
+(167, 'Lele putih/ biasa', 10, NULL),
+(168, 'Ikan terbang ', 11, NULL),
+(169, 'Ikan cucut', 11, NULL),
+(170, 'Gurami', 11, NULL),
+(171, 'kowan', 11, NULL),
+(172, 'tawes', 11, NULL),
+(173, 'ikan mola', 11, NULL),
+(174, 'bandeng', 11, NULL),
+(175, 'sepat', 11, NULL),
+(176, 'nilem', 11, NULL),
+(177, 'Ikan tambakan', 11, NULL);
 
 -- --------------------------------------------------------
 
@@ -140,7 +228,11 @@ CREATE TABLE `fish_categories` (
 INSERT INTO `fish_categories` (`id`, `fish_category_name`) VALUES
 (1, 'Air Laut'),
 (2, 'Air Payau'),
-(3, 'Air Tawar');
+(3, 'Air Tawar'),
+(8, 'Herbivora'),
+(9, 'Karnivora'),
+(10, 'Omnivora'),
+(11, 'Planktoon');
 
 -- --------------------------------------------------------
 
@@ -189,6 +281,32 @@ INSERT INTO `fish_size_categories` (`id`, `fish_size_category_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `galleries`
+--
+
+CREATE TABLE `galleries` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `gallery_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gallery_photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `galleries`
+--
+
+INSERT INTO `galleries` (`id`, `gallery_name`, `gallery_photo`, `created_at`, `updated_at`) VALUES
+(1, 'Fresh Fish', '20180711113321-ikanbox2.jpg', '2018-07-11 04:26:36', '2018-07-11 04:33:21'),
+(2, 'Good service', '20180711113339-paket1.jpg', '2018-07-11 04:33:39', '2018-07-11 04:33:39'),
+(3, 'EEFISH Box', '20180711113402-eefishpaket.png', '2018-07-11 04:34:02', '2018-07-11 04:34:02'),
+(4, 'Many kinds of Fish', '20180711113435-aaikan.jpg', '2018-07-11 04:34:24', '2018-07-11 04:34:35'),
+(5, 'Fresh Fish before being Distributed', '20180711113454-bb.jpg', '2018-07-11 04:34:54', '2018-07-11 04:34:54'),
+(6, 'Maintenance Application', '20180711113510-us.jpg', '2018-07-11 04:35:10', '2018-07-11 04:35:10');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `links`
 --
 
@@ -218,7 +336,14 @@ INSERT INTO `links` (`id`, `link_position`, `link_is_parent`, `link_parent_id`, 
 (11, 'footer', 1, 0, 'Harga Benih & Komoditi', 'http://localhost/client/efish/harga-benih-ikan'),
 (12, 'footer', 1, 0, 'Ruang Pertemuan', 'http://localhost/client/efish/penyewaan-aula'),
 (13, 'footer', 1, 0, 'Pelatihan', 'http://localhost/client/efish/pelatihan'),
-(14, 'sidebar', 0, 5, 'Penginapan', 'http://localhost/client/efish/penginapan');
+(14, 'sidebar', 0, 5, 'Penginapan', 'http://localhost/client/efish/penginapan'),
+(15, 'header', 1, 0, 'Home', 'http://localhost/client/efish/#home'),
+(16, 'header', 1, 0, 'Speciality', 'http://localhost/client/efish/#features'),
+(17, 'header', 1, 0, 'About', 'http://localhost/client/efish/#business'),
+(18, 'header', 1, 0, 'Gallery', 'http://localhost/client/efish/#products'),
+(19, 'header', 1, 0, 'Team', 'http://localhost/client/efish/#team'),
+(20, 'header', 1, 0, 'Contact', 'http://localhost/client/efish/#contact'),
+(21, 'header', 1, 0, 'Catalog', 'http://localhost/client/efish/catalog');
 
 -- --------------------------------------------------------
 
@@ -278,7 +403,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (4, '2018_07_10_012429_pages', 1),
-(5, '2018_07_09_225439_links', 2);
+(5, '2018_07_09_225439_links', 2),
+(6, '2018_07_10_134746_add_photo_to_fishes', 3),
+(8, '2018_07_11_110731_create_galleries_table', 4);
 
 -- --------------------------------------------------------
 
@@ -376,8 +503,8 @@ INSERT INTO `pages` (`id`, `title`, `link`, `content`, `created_at`, `updated_at
 (6, 'Penyewaan Aula', 'penyewaan-aula', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<h5>Penyewaan Aula</h5>\r\n<p>Untuk meningkatkan pelayanan kepada konsumen, kami juga menyediakan penyewaan Aula (ruang pertemuan) untuk berbagai acara. Berikut ini harga yang kami tawarkan.</p>\r\n<p><strong>Luas 24,960 m2</strong></p>\r\n<table style="border-collapse: collapse; width: 100%;" border="1">\r\n<tbody>\r\n<tr>\r\n<th style="width: 20%; text-align: center; vertical-align: middle;">No</th>\r\n<th style="width: 20%; text-align: center; vertical-align: middle;">Peruntukan</th>\r\n<th style="width: 20%; text-align: center; vertical-align: middle;">Kapasitas</th>\r\n<th style="width: 20%; text-align: center; vertical-align: middle;">Fasilitas</th>\r\n<th style="width: 20%; text-align: center; vertical-align: middle;">Disewakan Perhari (Rp)</th>\r\n</tr>\r\n<tr>\r\n<td style="width: 20%; text-align: center;">1</td>\r\n<td style="width: 20%;">Pelatihan</td>\r\n<td style="width: 20%; text-align: center;">30-50&nbsp;</td>\r\n<td style="width: 20%;">Backdrop (panggung)&nbsp;</td>\r\n<td style="width: 20%;">I.OOO.OOO</td>\r\n</tr>\r\n<tr>\r\n<td style="width: 20%; text-align: center;">2</td>\r\n<td style="width: 20%;">Resepsi / pertemuan</td>\r\n<td style="width: 20%; text-align: center;">70-80&nbsp;</td>\r\n<td style="width: 20%;">Mej a/kursi AC Mic wairless dan sound s stem</td>\r\n<td style="width: 20%;">&nbsp;</td>\r\n</tr>\r\n<tr>\r\n<td style="width: 20%; text-align: center;">3</td>\r\n<td style="width: 20%;">Dll (kondisional)&nbsp;</td>\r\n<td style="width: 20%;">&nbsp;</td>\r\n<td style="width: 20%;">&nbsp;</td>\r\n<td style="width: 20%;">&nbsp;</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>\r\n</body>\r\n</html>', '2018-07-10 01:46:41', '2018-07-10 04:00:50'),
 (7, 'Perpustakaan', 'perpustakaan', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<h5>Perpustakaan</h5>\r\n<table style="border-collapse: collapse; width: 100%; height: 575px;" border="1">\r\n<tbody>\r\n<tr style="height: 67px;">\r\n<td style="width: 25%; height: 67px;">No</td>\r\n<td style="width: 25%; height: 67px;">Lingkup buku/materi</td>\r\n<td style="width: 25%; height: 67px;">Fasilitas</td>\r\n<td style="width: 25%; height: 67px;">Keterangan</td>\r\n</tr>\r\n<tr style="height: 67px;">\r\n<td style="width: 25%; text-align: center; height: 67px;">1</td>\r\n<td style="width: 25%; height: 67px;">Umum ( 11mu Dasar )</td>\r\n<td style="width: 25%; height: 508px;" rowspan="10">\r\n<ul>\r\n<li>Rak buku</li>\r\n<li><span style="font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-weight: inherit;">Ruang baca</span></li>\r\n<li>Meja, kursi</li>\r\n<li>AC</li>\r\n<li>Petugas</li>\r\n</ul>\r\n</td>\r\n<td style="width: 25%; height: 508px;" rowspan="10">\r\n<ul>\r\n<li>Tidak ada pungutan/tarif</li>\r\n<li>Peminjaman / Pengembalian buku sesuai aturan yang berlaku</li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 25%; text-align: center; height: 49px;">2</td>\r\n<td style="width: 25%; height: 49px;">Undang &mdash; undang</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 25%; text-align: center; height: 49px;">3</td>\r\n<td style="width: 25%; height: 49px;">Budidaya</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 25%; text-align: center; height: 49px;">4</td>\r\n<td style="width: 25%; height: 49px;">Laporan PKL</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 25%; text-align: center; height: 49px;">5</td>\r\n<td style="width: 25%; height: 49px;">Skripsi</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 25%; text-align: center; height: 49px;">6</td>\r\n<td style="width: 25%; height: 49px;">Proposal</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 25%; text-align: center; height: 49px;">7</td>\r\n<td style="width: 25%; height: 49px;">Laporan Tahunan perikananjatim</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 25%; text-align: center; height: 49px;">8</td>\r\n<td style="width: 25%; height: 49px;">Laporan kinerj a</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 25%; text-align: center; height: 49px;">9</td>\r\n<td style="width: 25%; height: 49px;">Majalah / buletin</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 25%; text-align: center; height: 49px;">10</td>\r\n<td style="width: 25%; height: 49px;">Lain lain (brosur,leaflet,Juknis,Jukers)</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>\r\n</body>\r\n</html>', '2018-07-10 01:46:58', '2018-07-10 04:12:24'),
 (8, 'Penyewaan Laboratorium', 'penyewaan-laboratorium', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<h5>Penyewaan Laboratorium</h5>\r\n<table style="border-collapse: collapse; width: 96.5306%; height: 771px;" border="1">\r\n<tbody>\r\n<tr style="height: 67px;">\r\n<th style="width: 20%; height: 67px; text-align: center;">No</th>\r\n<th style="width: 20%; height: 67px; text-align: center;">Parameter Uji</th>\r\n<th style="width: 20%; height: 67px; text-align: center;" colspan="3">Tarif</th>\r\n</tr>\r\n<tr style="height: 67px;">\r\n<th style="width: 20%; height: 67px; text-align: center;">&nbsp;</th>\r\n<th style="width: 20%; height: 67px; text-align: center;">&nbsp;</th>\r\n<th style="width: 20%; height: 67px; text-align: center;">Tarif Persample</th>\r\n<th style="width: 20%; height: 67px; text-align: center;">Test kit</th>\r\n<th style="width: 20%; height: 67px; text-align: center;">Spektro</th>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; height: 441px; text-align: center;" rowspan="9">1</td>\r\n<td style="width: 20%; height: 49px;"><strong>Kualitas Air</strong></td>\r\n<td style="width: 20%; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; height: 49px;">&nbsp;</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; height: 49px;">D O</td>\r\n<td style="width: 20%; height: 49px; text-align: center;">10.000</td>\r\n<td style="width: 20%; height: 49px; text-align: center;">&nbsp;</td>\r\n<td style="width: 20%; height: 49px; text-align: center;">&nbsp;</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; height: 49px;">P H</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">10.000</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">&nbsp;</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; height: 49px;">Suhu</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">5.000</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">&nbsp;</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; height: 49px;">Salinitas</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">10.000</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">&nbsp;</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; height: 49px;">Nitrat</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">25.000</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">40.000</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; height: 49px;">Nitrit</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">25.000</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">40.000</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; height: 49px;">Amoniak</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">25.000</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">40.000</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; height: 49px;">Sulfit</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">25.000</td>\r\n<td style="width: 20%; text-align: center; height: 49px;">40.000</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; text-align: center; height: 49px;" rowspan="4">2</td>\r\n<td style="width: 20%; height: 49px;"><strong>Plankton</strong></td>\r\n<td style="width: 20%; text-align: center; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; height: 49px;">&nbsp;</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; height: 49px;">Chlorella<strong><br /></strong></td>\r\n<td style="width: 20%; text-align: center; height: 49px;">25.000</td>\r\n<td style="width: 20%; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; height: 49px;">&nbsp;</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; height: 49px;">Rotifer<strong><br /></strong></td>\r\n<td style="width: 20%; text-align: center; height: 49px;">25.000</td>\r\n<td style="width: 20%; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; height: 49px;">&nbsp;</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 20%; height: 49px;">sketonema<strong><br /></strong></td>\r\n<td style="width: 20%; text-align: center; height: 49px;">25.000</td>\r\n<td style="width: 20%; height: 49px;">&nbsp;</td>\r\n<td style="width: 20%; height: 49px;">&nbsp;</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</body>\r\n</html>', '2018-07-10 01:47:16', '2018-07-10 04:18:59'),
-(9, 'Pelatihan', 'pelatihan', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<h5>Pelatihan Di UPT PNL Situbondo</h5>\r\n<p><strong>Tujuan</strong>:</p>\r\n<ul>\r\n<li>Guna meningkatkan kualitas SDM</li>\r\n<li>Profesionalisme dan ahli teknis pembenihan/ budidaya komoditas laut</li>\r\n<li>Sosialisasi ke pembudidaya T</li>\r\n<li>ranformasi İPTEK</li>\r\n</ul>\r\n<p><strong>Sasaran</strong> : Pembudidaya/ Pembenih komoditas laut</p>\r\n<p><strong>Jenis pelatihan meliputi :</strong></p>\r\n<ul>\r\n<li>Pembenihan kerapu</li>\r\n<li>Budidaya kerapu</li>\r\n<li>Pembenihan rumput laut</li>\r\n<li>Pembenihan rajungan</li>\r\n<li>Pembenihan vaname</li>\r\n<li>Budidaya lobster di KJA&nbsp;</li>\r\n</ul>\r\n<p><strong>Substansi Materi/ bahan ajar</strong></p>\r\n<p><strong>1. Pembenihan ikan kerapu :&nbsp;</strong></p>\r\n<ul>\r\n<li>Sarana dan prasarana pembenihan</li>\r\n<li>pengelolaan pakan alami</li>\r\n<li>teknik pembenihan kerapu</li>\r\n<li>hama dan penyakit dalam pembenihan</li>\r\n<li>panen dan pemasaran</li>\r\n</ul>\r\n<p><strong>2.&nbsp;Budidaya ikan kerapu :</strong></p>\r\n<ul>\r\n<li>&nbsp;Sarana dan prasarana budidaya</li>\r\n<li>pengelolaan pakan pada budidaya</li>\r\n<li>&nbsp;teknik budidaya kerapu</li>\r\n<li>&nbsp;hama dan penyakit dalam budidaya</li>\r\n<li>panen dan pemasaran</li>\r\n</ul>\r\n<p><strong>3. Pembenihan rajungan</strong></p>\r\n<ul>\r\n<li>Sarana dan prasarana pembenihan&nbsp;</li>\r\n<li>pengelolaan pakan alami</li>\r\n<li>teknik pembenihan rajungan</li>\r\n<li>pengelolaan kualitas air</li>\r\n<li>&nbsp;panen dan pemasaran</li>\r\n</ul>\r\n<p><strong>4.&nbsp;Budidaya rumput laut</strong></p>\r\n<ul>\r\n<li>Pemilihan lokasi budidaya</li>\r\n<li>sarana dan prasarana budidaya</li>\r\n<li>teknik budidaya rula</li>\r\n<li>hama dan penyakit pada budidaya</li>\r\n<li>panen dan pemasaran</li>\r\n</ul>\r\n<p><strong>5.&nbsp;Budidaya lobster</strong></p>\r\n<ul>\r\n<li>Sarana dan prasarana budidaya lobster</li>\r\n<li>pengelolaan pakan pada budidaya</li>\r\n<li>teknik pembenihan lobster</li>\r\n<li>hama dan penyakit dalam budidaya</li>\r\n<li>&nbsp;panen dan pemasaran</li>\r\n</ul>\r\n<p><strong>6.&nbsp;Budidaya udang vaname</strong></p>\r\n<ul>\r\n<li>Sarana dan prasarana pembenihan</li>\r\n<li>&nbsp;pengelolaan pakan alami</li>\r\n<li>teknik pembenihan udang vaname</li>\r\n<li>&nbsp;hama dan penyakit dalam pembenihan</li>\r\n<li>&nbsp;panen dan pemasaran</li>\r\n</ul>\r\n</body>\r\n</html>', '2018-07-10 01:47:34', '2018-07-10 04:28:07'),
-(10, 'Penginapan', 'penginapan', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<h5>Penginapan&nbsp;</h5>\r\n<ol>\r\n<li><strong>Guess House</strong>\r\n<table style="border-collapse: collapse; width: 100%; height: 312px;" border="1">\r\n<tbody>\r\n<tr style="height: 67px;">\r\n<th style="width: 18.75%; height: 67px; text-align: center;">Kamar</th>\r\n<th style="width: 31.25%; height: 67px; text-align: center;">Jumlah Bed (Unit)</th>\r\n<th style="width: 25%; height: 67px; text-align: center;">Fasilitas</th>\r\n<th style="width: 25%; height: 67px; text-align: center;">Tarif/hari</th>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 18.75%; height: 49px; text-align: center;">I</td>\r\n<td style="width: 31.25%; height: 49px; text-align: center;">(2x1,8) M</td>\r\n<td style="width: 25%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh&amp;Air Mineral</li>\r\n<li>Sandal</li>\r\n</ul>\r\n</td>\r\n<td style="width: 25%; height: 49px; text-align: center;">400.000,-</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 18.75%; height: 49px; text-align: center;">II</td>\r\n<td style="width: 31.25%; height: 49px; text-align: center;">(2x1,8) dan (2x1,20) M</td>\r\n<td style="width: 25%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh &amp; Air Mineral</li>\r\n<li>Sandal</li>\r\n</ul>\r\n</td>\r\n<td style="width: 25%; height: 49px; text-align: center;">400.000,-</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 18.75%; height: 49px; text-align: center;">III</td>\r\n<td style="width: 31.25%; height: 49px; text-align: center;">(2x1,8) M</td>\r\n<td style="width: 25%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh &amp; Air Mineral</li>\r\n<li>Sandal</li>\r\n</ul>\r\n</td>\r\n<td style="width: 25%; height: 49px; text-align: center;">400.000,-</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</li>\r\n<li><strong>Villa (View Laut)</strong>\r\n<table style="border-collapse: collapse; width: 99.8929%; height: 263px;" border="1">\r\n<tbody>\r\n<tr style="height: 67px;">\r\n<th style="width: 18.3036%; height: 67px; text-align: center;">Kamar</th>\r\n<th style="width: 31.6964%; height: 67px; text-align: center;">Jumlah Bed (Unit)</th>\r\n<th style="width: 12.5%; height: 67px; text-align: center;">Fasilitas</th>\r\n<th style="width: 12.5%; text-align: center; height: 67px;">Lantai</th>\r\n<th style="width: 14.2792%; height: 67px; text-align: center;">Tarif/hari</th>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 18.3036%; height: 49px; text-align: center;">I</td>\r\n<td style="width: 31.6964%; height: 49px; text-align: center;">(2x180) M</td>\r\n<td style="width: 12.5%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh&amp;Air Mineral</li>\r\n<li>Sandal</li>\r\n</ul>\r\n</td>\r\n<td style="width: 12.5%; height: 49px;">Atas</td>\r\n<td style="width: 14.2792%; height: 49px; text-align: center;">500.000,-</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 18.3036%; height: 49px; text-align: center;">II</td>\r\n<td style="width: 31.6964%; height: 49px; text-align: center;">(2x1,20) M</td>\r\n<td style="width: 12.5%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh &amp; Air Mineral</li>\r\n<li>Sandal</li>\r\n</ul>\r\n</td>\r\n<td style="width: 12.5%; height: 49px;">Bawah</td>\r\n<td style="width: 14.2792%; height: 49px; text-align: center;">500.000,-</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</li>\r\n<li><strong>Asrama</strong>\r\n<table style="border-collapse: collapse; width: 100%;" border="1">\r\n<tbody>\r\n<tr style="height: 67px;">\r\n<th style="width: 18.3036%; height: 67px; text-align: center;">Kamar</th>\r\n<th style="width: 31.6964%; height: 67px; text-align: center;">Jumlah Bed (Unit)</th>\r\n<th style="width: 12.5%; height: 67px; text-align: center;">Fasilitas</th>\r\n<th style="width: 12.5%; text-align: center; height: 67px;">Lantai</th>\r\n<th style="width: 14.2792%; height: 67px; text-align: center;">Tarif/hari</th>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 18.3036%; height: 49px; text-align: center;">I</td>\r\n<td style="width: 31.6964%; height: 49px; text-align: center;">4 (2x1,2) M</td>\r\n<td style="width: 12.5%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh&amp;Air Mineral</li>\r\n</ul>\r\n</td>\r\n<td style="width: 12.5%; height: 49px;">Atas</td>\r\n<td style="width: 14.2792%; height: 49px; text-align: center;">500.000,-</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 18.3036%; height: 49px; text-align: center;">II</td>\r\n<td style="width: 31.6964%; height: 49px; text-align: center;">6 (2x1,2) M</td>\r\n<td style="width: 12.5%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh &amp; Air Mineral</li>\r\n</ul>\r\n</td>\r\n<td style="width: 12.5%; height: 49px;">Atas</td>\r\n<td style="width: 14.2792%; height: 49px; text-align: center;">500.000,-</td>\r\n</tr>\r\n<tr>\r\n<td style="width: 100%;">&nbsp;</td>\r\n<td>&nbsp;</td>\r\n<td>&nbsp;</td>\r\n<td>&nbsp;</td>\r\n<td>&nbsp;</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</li>\r\n<li><strong>Ruang Karaoke</strong>\r\n<table style="border-collapse: collapse; width: 100.444%; height: 256px;" border="1">\r\n<tbody>\r\n<tr style="height: 67px;">\r\n<th style="width: 45.2465%; height: 67px; text-align: center;">Ukuran Ruangan</th>\r\n<th style="width: 2.71003%; height: 67px; text-align: center;">Fasilitas</th>\r\n<th style="width: 12.5%; text-align: center; height: 67px;">Keterangan</th>\r\n<th style="width: 107.687%; height: 67px; text-align: center;">Tarif/hari</th>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 45.2465%; height: 49px; text-align: center;">3,5x4x2,70 M</td>\r\n<td style="width: 2.71003%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan karaoke</li>\r\n<li>Sofa, Meja dan Kursi</li>\r\n<li>AC</li>\r\n</ul>\r\n</td>\r\n<td style="width: 12.5%; height: 49px;">Bebas Rokok (Lantai Il)</td>\r\n<td style="width: 107.687%; height: 49px; text-align: center;">50.000,-/ Jam</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</li>\r\n<li><strong>Mess</strong>\r\n<table style="border-collapse: collapse; width: 99.7855%;" border="1">\r\n<tbody>\r\n<tr style="height: 67px;">\r\n<th style="width: 10.3009%; text-align: center;">Kamar</th>\r\n<th style="width: 34.9455%; height: 67px; text-align: center;">Jumlah Bed(Unit)</th>\r\n<th style="width: 2.71003%; height: 67px; text-align: center;">Fasilitas</th>\r\n<th style="width: 12.5%; text-align: center; height: 67px;">Lantai</th>\r\n<th style="width: 2.1645%; height: 67px; text-align: center;">Tarif/hari</th>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 10.3009%; text-align: center;">6</td>\r\n<td style="width: 34.9455%; height: 49px; text-align: center;">\r\n<p>(2x1,6) M</p>\r\n<p><span style="font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-weight: inherit;">(2x1,2) M</span></p>\r\n</td>\r\n<td style="width: 2.71003%; height: 49px;">\r\n<ul>\r\n<li>Dapur</li>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/teh&amp;Air Mineral</li>\r\n<li>Sandal</li>\r\n</ul>\r\n</td>\r\n<td style="width: 12.5%; height: 49px;">Atas</td>\r\n<td style="width: 2.1645%; height: 49px; text-align: center;">500.000,-</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</li>\r\n</ol>\r\n</body>\r\n</html>', '2018-07-10 04:39:09', '2018-07-10 04:47:40');
+(9, 'Pelatihan', 'pelatihan', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<h5>Pelatihan Di UPT PNL Situbondo</h5>\r\n<p><strong>Tujuan</strong>:</p>\r\n<ul>\r\n<li>Guna meningkatkan kualitas SDM</li>\r\n<li>Profesionalisme dan ahli teknis pembenihan/ budidaya komoditas laut</li>\r\n<li>Sosialisasi ke pembudidaya T</li>\r\n<li>ranformasi İPTEK</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p><strong>Sasaran</strong> : Pembudidaya/ Pembenih komoditas laut</p>\r\n<p><strong>Jenis pelatihan meliputi :</strong></p>\r\n<ul>\r\n<li>Pembenihan kerapu</li>\r\n<li>Budidaya kerapu</li>\r\n<li>Pembenihan rumput laut</li>\r\n<li>Pembenihan rajungan</li>\r\n<li>Pembenihan vaname</li>\r\n<li>Budidaya lobster di KJA&nbsp;</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p><strong>Substansi Materi/ bahan ajar</strong></p>\r\n<p><strong>1. Pembenihan ikan kerapu :&nbsp;</strong></p>\r\n<ul>\r\n<li>Sarana dan prasarana pembenihan</li>\r\n<li>pengelolaan pakan alami</li>\r\n<li>teknik pembenihan kerapu</li>\r\n<li>hama dan penyakit dalam pembenihan</li>\r\n<li>panen dan pemasaran</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p><strong>2.&nbsp;Budidaya ikan kerapu :</strong></p>\r\n<ul>\r\n<li>&nbsp;Sarana dan prasarana budidaya</li>\r\n<li>pengelolaan pakan pada budidaya</li>\r\n<li>&nbsp;teknik budidaya kerapu</li>\r\n<li>&nbsp;hama dan penyakit dalam budidaya</li>\r\n<li>panen dan pemasaran</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p><strong>3. Pembenihan rajungan</strong></p>\r\n<ul>\r\n<li>Sarana dan prasarana pembenihan&nbsp;</li>\r\n<li>pengelolaan pakan alami</li>\r\n<li>teknik pembenihan rajungan</li>\r\n<li>pengelolaan kualitas air</li>\r\n<li>&nbsp;panen dan pemasaran</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p><strong>4.&nbsp;Budidaya rumput laut</strong></p>\r\n<ul>\r\n<li>Pemilihan lokasi budidaya</li>\r\n<li>sarana dan prasarana budidaya</li>\r\n<li>teknik budidaya rula</li>\r\n<li>hama dan penyakit pada budidaya</li>\r\n<li>panen dan pemasaran</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p><strong>5.&nbsp;Budidaya lobster</strong></p>\r\n<ul>\r\n<li>Sarana dan prasarana budidaya lobster</li>\r\n<li>pengelolaan pakan pada budidaya</li>\r\n<li>teknik pembenihan lobster</li>\r\n<li>hama dan penyakit dalam budidaya</li>\r\n<li>&nbsp;panen dan pemasaran</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p><strong>6.&nbsp;Budidaya udang vaname</strong></p>\r\n<ul>\r\n<li>Sarana dan prasarana pembenihan</li>\r\n<li>&nbsp;pengelolaan pakan alami</li>\r\n<li>teknik pembenihan udang vaname</li>\r\n<li>&nbsp;hama dan penyakit dalam pembenihan</li>\r\n<li>&nbsp;panen dan pemasaran</li>\r\n</ul>\r\n</body>\r\n</html>', '2018-07-10 01:47:34', '2018-07-10 08:05:29'),
+(10, 'Penginapan', 'penginapan', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<h5>Penginapan&nbsp;</h5>\r\n<ol>\r\n<li><strong>Guess House</strong>\r\n<table style="border-collapse: collapse; width: 100%; height: 312px;" border="1">\r\n<tbody>\r\n<tr style="height: 67px;">\r\n<th style="width: 14.5089%; height: 67px; text-align: center;">Kamar</th>\r\n<th style="width: 26.1161%; height: 67px; text-align: center;">Jumlah Bed (Unit)</th>\r\n<th style="width: 34.375%; height: 67px; text-align: center;">Fasilitas</th>\r\n<th style="width: 25%; height: 67px; text-align: center;">Tarif/hari</th>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 14.5089%; height: 49px; text-align: center;">I</td>\r\n<td style="width: 26.1161%; height: 49px; text-align: center;">(2x1,8) M</td>\r\n<td style="width: 34.375%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh&amp;Air Mineral</li>\r\n<li>Sandal</li>\r\n</ul>\r\n</td>\r\n<td style="width: 25%; height: 49px; text-align: center;">400.000,-</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 14.5089%; height: 49px; text-align: center;">II</td>\r\n<td style="width: 26.1161%; height: 49px; text-align: center;">(2x1,8) dan (2x1,20) M</td>\r\n<td style="width: 34.375%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh &amp; Air Mineral</li>\r\n<li>Sandal</li>\r\n</ul>\r\n</td>\r\n<td style="width: 25%; height: 49px; text-align: center;">400.000,-</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 14.5089%; height: 49px; text-align: center;">III</td>\r\n<td style="width: 26.1161%; height: 49px; text-align: center;">(2x1,8) M</td>\r\n<td style="width: 34.375%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh &amp; Air Mineral</li>\r\n<li>Sandal</li>\r\n</ul>\r\n</td>\r\n<td style="width: 25%; height: 49px; text-align: center;">400.000,-</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</li>\r\n<li><strong>Villa (View Laut)</strong>\r\n<table style="border-collapse: collapse; width: 99.8929%; height: 263px;" border="1">\r\n<tbody>\r\n<tr style="height: 67px;">\r\n<th style="width: 13.3819%; height: 67px; text-align: center;">Kamar</th>\r\n<th style="width: 22.7478%; height: 67px; text-align: center;">Jumlah Bed (Unit)</th>\r\n<th style="width: 26.3703%; height: 67px; text-align: center;">Fasilitas</th>\r\n<th style="width: 12.5%; text-align: center; height: 67px;">Lantai</th>\r\n<th style="width: 14.2792%; height: 67px; text-align: center;">Tarif/hari</th>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 13.3819%; height: 49px; text-align: center;">I</td>\r\n<td style="width: 22.7478%; height: 49px; text-align: center;">(2x180) M</td>\r\n<td style="width: 26.3703%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh&amp;Air Mineral</li>\r\n<li>Sandal</li>\r\n</ul>\r\n</td>\r\n<td style="width: 12.5%; height: 49px;">Atas</td>\r\n<td style="width: 14.2792%; height: 49px; text-align: center;">500.000,-</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 13.3819%; height: 49px; text-align: center;">II</td>\r\n<td style="width: 22.7478%; height: 49px; text-align: center;">(2x1,20) M</td>\r\n<td style="width: 26.3703%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh &amp; Air Mineral</li>\r\n<li>Sandal</li>\r\n</ul>\r\n</td>\r\n<td style="width: 12.5%; height: 49px;">Bawah</td>\r\n<td style="width: 14.2792%; height: 49px; text-align: center;">500.000,-</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</li>\r\n<li><strong>Asrama</strong>\r\n<table style="border-collapse: collapse; width: 100%;" border="1">\r\n<tbody>\r\n<tr style="height: 67px;">\r\n<th style="width: 2.23214%; height: 67px; text-align: center;">Kamar</th>\r\n<th style="width: 19.8661%; height: 67px; text-align: center;">Jumlah Bed (Unit)</th>\r\n<th style="width: 40.4018%; height: 67px; text-align: center;">Fasilitas</th>\r\n<th style="width: 12.5%; text-align: center; height: 67px;">Lantai</th>\r\n<th style="width: 14.2792%; height: 67px; text-align: center;">Tarif/hari</th>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 2.23214%; height: 49px; text-align: center;">I</td>\r\n<td style="width: 19.8661%; height: 49px; text-align: center;">4 (2x1,2) M</td>\r\n<td style="width: 40.4018%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh&amp;Air Mineral</li>\r\n</ul>\r\n</td>\r\n<td style="width: 12.5%; height: 49px;">Atas</td>\r\n<td style="width: 14.2792%; height: 49px; text-align: center;">500.000,-</td>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 2.23214%; height: 49px; text-align: center;">II</td>\r\n<td style="width: 19.8661%; height: 49px; text-align: center;">6 (2x1,2) M</td>\r\n<td style="width: 40.4018%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/Teh &amp; Air Mineral</li>\r\n</ul>\r\n</td>\r\n<td style="width: 12.5%; height: 49px;">Atas</td>\r\n<td style="width: 14.2792%; height: 49px; text-align: center;">500.000,-</td>\r\n</tr>\r\n<tr>\r\n<td style="width: 2.23214%;">&nbsp;</td>\r\n<td style="width: 19.8661%;">&nbsp;</td>\r\n<td style="width: 40.4018%;">&nbsp;</td>\r\n<td style="width: 12.5%;">&nbsp;</td>\r\n<td style="width: 14.2792%;">&nbsp;</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</li>\r\n<li><strong>Ruang Karaoke</strong>\r\n<table style="border-collapse: collapse; width: 100.444%; height: 256px;" border="1">\r\n<tbody>\r\n<tr style="height: 67px;">\r\n<th style="width: 27.6518%; height: 67px; text-align: center;">Ukuran Ruangan</th>\r\n<th style="width: 32.9996%; height: 67px; text-align: center;">Fasilitas</th>\r\n<th style="width: 15.3953%; text-align: center; height: 67px;">Keterangan</th>\r\n<th style="width: 92.0964%; height: 67px; text-align: center;">Tarif/hari</th>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 27.6518%; height: 49px; text-align: center;">3,5x4x2,70 M</td>\r\n<td style="width: 32.9996%; height: 49px;">\r\n<ul>\r\n<li>Perlengkapan karaoke</li>\r\n<li>Sofa, Meja dan Kursi</li>\r\n<li>AC</li>\r\n</ul>\r\n</td>\r\n<td style="width: 15.3953%; height: 49px;">Bebas Rokok (Lantai Il)</td>\r\n<td style="width: 92.0964%; height: 49px; text-align: center;">50.000,-/ Jam</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</li>\r\n<li><strong>Mess</strong>\r\n<table style="border-collapse: collapse; width: 99.7855%;" border="1">\r\n<tbody>\r\n<tr style="height: 67px;">\r\n<th style="width: 6.05034%; text-align: center;">Kamar</th>\r\n<th style="width: 19.5093%; height: 67px; text-align: center;">Jumlah Bed(Unit)</th>\r\n<th style="width: 22.3968%; height: 67px; text-align: center;">Fasilitas</th>\r\n<th style="width: 12.5%; text-align: center; height: 67px;">Lantai</th>\r\n<th style="width: 2.1645%; height: 67px; text-align: center;">Tarif/hari</th>\r\n</tr>\r\n<tr style="height: 49px;">\r\n<td style="width: 6.05034%; text-align: center;">6</td>\r\n<td style="width: 19.5093%; height: 49px; text-align: center;">\r\n<p>(2x1,6) M</p>\r\n<p><span style="font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-weight: inherit;">(2x1,2) M</span></p>\r\n</td>\r\n<td style="width: 22.3968%; height: 49px;">\r\n<ul>\r\n<li>Dapur</li>\r\n<li>Perlengkapan Mandi</li>\r\n<li>AC dan TV</li>\r\n<li>Kopi/teh&amp;Air Mineral</li>\r\n<li>Sandal</li>\r\n</ul>\r\n</td>\r\n<td style="width: 12.5%; height: 49px;">Atas</td>\r\n<td style="width: 2.1645%; height: 49px; text-align: center;">500.000,-</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</li>\r\n</ol>\r\n</body>\r\n</html>', '2018-07-10 04:39:09', '2018-07-10 08:03:22');
 
 -- --------------------------------------------------------
 
@@ -526,6 +653,12 @@ ALTER TABLE `fish_size_categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `galleries`
+--
+ALTER TABLE `galleries`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `links`
 --
 ALTER TABLE `links`
@@ -640,12 +773,12 @@ ALTER TABLE `courier_assignments`
 -- AUTO_INCREMENT for table `fishes`
 --
 ALTER TABLE `fishes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
 --
 -- AUTO_INCREMENT for table `fish_categories`
 --
 ALTER TABLE `fish_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `fish_items`
 --
@@ -657,10 +790,15 @@ ALTER TABLE `fish_items`
 ALTER TABLE `fish_size_categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `galleries`
+--
+ALTER TABLE `galleries`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
 -- AUTO_INCREMENT for table `links`
 --
 ALTER TABLE `links`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `message_systems`
 --
@@ -670,7 +808,7 @@ ALTER TABLE `message_systems`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `orders`
 --
