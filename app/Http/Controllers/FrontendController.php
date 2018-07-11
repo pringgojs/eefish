@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 use App\Models\Fish;
 use App\Models\Link;
 use App\Models\Page;
+use App\Models\Gallery;
 use App\Models\FishCategory;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,7 @@ class FrontendController extends Controller
         $view = view('frontend.index');
         $view->link_header = Link::where('link_position', 'header')->get();
         $view->link_footer = Link::where('link_position', 'footer')->get();
+        $view->galleries = Gallery::all();
         return $view;
     }
 

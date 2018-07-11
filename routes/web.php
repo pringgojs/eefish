@@ -27,7 +27,13 @@ Route::group(['prefix' => 'content', 'namespace' => 'Content', 'middleware' => '
         Route::post('/add', 'PageController@add');
         Route::post('/save', 'PageController@save');
         Route::post('/delete', 'PageController@delete');
-        Route::get('/{id}/detail', 'PageController@detail');
+    });
+
+    Route::group(['prefix' => 'gallery'], function () {
+        Route::get('/', 'GalleryController@index');
+        Route::post('/add', 'GalleryController@add');
+        Route::post('/save', 'GalleryController@save');
+        Route::post('/delete', 'GalleryController@delete');
     });
 
     Route::group(['prefix' => 'link'], function () {
@@ -35,7 +41,6 @@ Route::group(['prefix' => 'content', 'namespace' => 'Content', 'middleware' => '
         Route::post('/add', 'LinkController@add');
         Route::post('/save', 'LinkController@save');
         Route::post('/delete', 'LinkController@delete');
-        Route::get('/{id}/detail', 'LinkController@detail');
     });
 });
 

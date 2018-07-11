@@ -18,6 +18,11 @@
                 </a>
             </li>
             <li>
+                <a href="{{url('content/gallery')}}">
+                    <i class="fa fa-circle-o"></i> Manajemen Galeri
+                </a>
+            </li>
+            <li>
                 <a href="{{url('content/link')}}">
                     <i class="fa fa-circle-o"></i> Manajemen Link
                 </a>
