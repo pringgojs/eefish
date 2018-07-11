@@ -230,46 +230,21 @@
                         <div class="item active">
                             <div class="container">
                                 <div class="row">
+                                    @foreach($galleries_page_one as $gallery)
                                     <div class="col-sm-4">
                                         <div class="port_item xs-m-top-30">
                                             <div class="port_img">
-                                                <img src="{{asset('public/frontend/eefish/assets/images/ikanbox2.jpg')}}" alt="" />
+                                                <img src="{{asset('public/uploads/gallery/'.$gallery->gallery_photo)}}" alt="" />
                                                 <div class="port_overlay text-center">
-                                                    <a href="{{asset('public/frontend/eefish/assets/images/ikanbox2.jpg')}}" class="popup-img">+</a>
+                                                    <a href="{{asset('public/uploads/gallery/'.$gallery->gallery_photo)}}}" class="popup-img">+</a>
                                                 </div>
                                             </div>
                                             <div class="port_caption m-top-20">
-                                                <h5>Fresh Fish</h5>
+                                                <h5>{{$gallery->gallery_name}}</h5>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <div class="port_item xs-m-top-30">
-                                            <div class="port_img">
-                                                <img src="{{asset('public/frontend/eefish/assets/images/paket1.jpg')}}" alt="" />
-                                                <div class="port_overlay text-center">
-                                                    <a href="{{asset('public/frontend/eefish/assets/images/paket1.jpg')}}" class="popup-img">+</a>
-                                                </div>
-                                            </div>
-                                            <div class="port_caption m-top-20">
-                                                <h5>Good servie</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="port_item xs-m-top-30">
-                                            <div class="port_img">
-                                                <img src="{{asset('public/frontend/eefish/assets/images/eefishpaket.png')}}" alt="" />
-                                                <div class="port_overlay text-center">
-                                                    <a href="{{asset('public/frontend/eefish/assets/images/eefishpaket.png')}}" class="popup-img">+</a>
-                                                </div>
-                                            </div>
-                                            <div class="port_caption m-top-20">
-                                                <h5>EEFISH Box</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -277,46 +252,21 @@
                         <div class="item">
                             <div class="container">
                                 <div class="row">
+                                    @foreach($galleries_page_two as $gallery)
                                     <div class="col-sm-4">
                                         <div class="port_item xs-m-top-30">
                                             <div class="port_img">
-                                                <img src="{{asset('public/frontend/eefish/assets/images/aaikan.jpg')}}" alt="" />
+                                                <img src="{{asset('public/uploads/gallery/'.$gallery->gallery_photo)}}" alt="" />
                                                 <div class="port_overlay text-center">
-                                                    <a href="{{asset('public/frontend/eefish/assets/images/aaikan.jpg')}}" class="popup-img">+</a>
+                                                    <a href="{{asset('public/uploads/gallery/'.$gallery->gallery_photo)}}}" class="popup-img">+</a>
                                                 </div>
                                             </div>
                                             <div class="port_caption m-top-20">
-                                                <h5>Many kinds of Fish</h5>
+                                                <h5>{{$gallery->gallery_name}}</h5>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <div class="port_item xs-m-top-30">
-                                            <div class="port_img">
-                                                <img src="{{asset('public/frontend/eefish/assets/images/bb.jpg')}}" alt="" />
-                                                <div class="port_overlay text-center">
-                                                    <a href="{{asset('public/frontend/eefish/assets/images/bb.jpg')}}" class="popup-img">+</a>
-                                                </div>
-                                            </div>
-                                            <div class="port_caption m-top-20">
-                                                <h5>Fresh Fish before being Distributed</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="port_item xs-m-top-30">
-                                            <div class="port_img">
-                                                <img src="{{asset('public/frontend/eefish/assets/images/us.jpg')}}" alt="" />
-                                                <div class="port_overlay text-center">
-                                                    <a href="{{asset('public/frontend/eefish/assets/images/us.jpg')}}" class="popup-img">+</a>
-                                                </div>
-                                            </div>
-                                            <div class="port_caption m-top-20">
-                                                <h5>Maintenance Application</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
