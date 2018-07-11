@@ -17,6 +17,7 @@ Route::get('/login', 'LoginController@index');
 Route::post('/login/validate', 'LoginController@validateLogin');
 Route::get('/logout', 'LoginController@logout');
 
+Route::get('/gallery', 'FrontendController@gallery');
 Route::get('/catalog/{id}', 'FrontendController@catalog');
 Route::get('/catalog', 'FrontendController@catalog');
 Route::get('/{any}', 'FrontendController@page');

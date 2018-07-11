@@ -221,6 +221,7 @@
                 <div class="head_title text-center fix">
                     <h2 class="text-uppercase text-black">Our Gallery</h2>
                     <h5>Easier to buy fishes </h5>
+                    <a href="{{url('gallery')}}">See More</a>
                 </div>
 
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -236,7 +237,7 @@
                                             <div class="port_img">
                                                 <img src="{{asset('public/uploads/gallery/'.$gallery->gallery_photo)}}" alt="" />
                                                 <div class="port_overlay text-center">
-                                                    <a href="{{asset('public/uploads/gallery/'.$gallery->gallery_photo)}}}" class="popup-img">+</a>
+                                                    <a href="{{asset('public/uploads/gallery/'.$gallery->gallery_photo)}}" class="popup-img">+</a>
                                                 </div>
                                             </div>
                                             <div class="port_caption m-top-20">

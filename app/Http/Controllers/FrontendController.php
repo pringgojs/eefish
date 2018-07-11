@@ -52,4 +52,14 @@ class FrontendController extends Controller
         return $view;
     }
 
+    public function gallery()
+    {
+        $view = view('frontend.gallery');
+        $view->link_footer = Link::where('link_position', 'footer')->get();
+        $view->link_header = Link::where('link_position', 'header')->get();
+        $view->galleries = Gallery::paginate(12);
+        $view->title = 'Gallery';
+        return $view;
+    }
+
 }
