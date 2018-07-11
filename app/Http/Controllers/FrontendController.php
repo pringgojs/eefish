@@ -21,7 +21,7 @@ class FrontendController extends Controller
         $view->link_header = Link::where('link_position', 'header')->get();
         $view->link_footer = Link::where('link_position', 'footer')->get();
         $view->galleries_page_one = Gallery::skip(0)->take(3)->get();
-        $view->galleries_page_two = Gallery::skip(3)->take(6)->get();
+        $view->galleries_page_two = Gallery::skip(3)->take(3)->get();
         return $view;
     }
 
