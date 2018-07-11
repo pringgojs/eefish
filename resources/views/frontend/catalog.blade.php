@@ -29,7 +29,7 @@
                         ?>
                         <div class="col-md-4 col-xs-6">
                             <div class="thumbnail">
-                                <img src="{{ asset('public/uploads/ikan/'.$photo)}}" alt="Lights" style="width:100%">
+                                <img src="{{ asset('public/uploads/ikan/'.$photo)}}" alt="Lights" style="width:100%; height:230px">
                                 <div class="caption">
                                     <p><b>{{$fish->fish_name}}</b></p>
                                 </div>
